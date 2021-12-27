@@ -1,0 +1,139 @@
+header {
+  position: relative;
+  margin-bottom: 250px;
+}
+
+.cv {
+  font-size: 4rem;
+  font-weight: bolder;
+  cursor: pointer;
+  width: fit-content;
+  display: block;
+  transition: 0.3s ease-in-out;
+  position: relative;
+
+  &:hover {
+    transform: rotate(20deg);
+  }
+}
+
+.download-btn {
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 4px 10px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  margin-left: 7px;
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
+
+.summary {
+  margin: 40px 0;
+  p {
+    margin: 0;
+    line-height: 30px;
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background-color: transparent;
+  }
+}
+
+.home__container {
+  .myName {
+    font-size: 4rem;
+    text-align: center;
+    color: #4361a3;
+    font-family: "Source Code Pro", monospace;
+    position: relative;
+    width: fit-content;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    // animation variables
+    $typewriter-speed: 4.7s;
+
+    &::before {
+      background-color: aliceblue;
+      animation: typewriter $typewriter-speed steps(21) 1s forwards;
+    }
+
+    &::after {
+      width: 0.125em;
+      background: black;
+      animation: typewriter $typewriter-speed steps(21) 1s forwards,
+        blink 0.75s steps(24) infinite;
+    }
+  }
+
+  .gen-info {
+    &__lists {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      row-gap: 10px;
+      width: 90%;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .home__container {
+    .myName {
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .home__container {
+    .myName {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .cv {
+    margin-top: 30px;
+  }
+  .home__container {
+    .myName {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .home__container {
+    .myName {
+      font-size: 1.3rem;
+    }
+  }
+  .summary {
+    p {
+      font-size: 1rem;
+    }
+  }
+}

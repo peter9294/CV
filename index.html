@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/picture/favicon.ico" type="image/x-icon" />
+    <!-- fontawesome -->
+    <link href="./assets/fontawesome/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/brands.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/solid.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;300;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="global.css" />
+    <title>Peeti's CV webpage</title>
+  </head>
+  <body id="home">
+    <header>
+      <nav>
+        <span class="nav__menu" onclick="smoothNavigation('home')">Home</span>
+        <span class="nav__menu" onclick="smoothNavigation('contact')"
+        >Contact</span
+        >
+        <span class="nav__menu" onclick="smoothNavigation('skills')"
+          >Skills</span
+        >
+        <span class="nav__menu" onclick="smoothNavigation('timeline')"
+          >Timeline</span
+        >
+      </nav>
+      <div class="cv">CV</div>
+      <a href="./assets/file/CV - Peeti Kanchanakungwalkun.pdf" target="_blank" class="download-btn">
+        <i class="fas fa-file-download"></i><b> PDF</b>
+      </a>
+    </header>
+    <main>
+      <section class="home__container">
+        <h1 class="myName">Hi, my name is Peter.</h1>
+        <h4>
+          Peeti Kanchanakungwalkul <br />
+          ปีติ กาญจนกังวาฬกุล
+        </h4>
+        <div class="summary">
+          <h2>Summary</h2>
+          <p>
+            A highly motivated, self-taught developer seeking junior-level front-end developer positions. Having 2 years of work experience in a tech company as a sale engineer, and an adequate understanding of both front-end and back-end technologies.
+          </p>
+        </div>
+        <div class="gen-info">
+          <h2>General information</h2>
+          <div class="gen-info__lists">
+            <span class="list--mini">Nationality: Thai</span>
+            <span class="list--mini">Sex: Male</span>
+            <span class="list--mini">
+              Date of birth: 10 August 1995 (<span id="myAge"></span>)
+            </span>
+            <span class="list--mini">Marital status: Single </span>
+            <span class="list--mini">Military status: Exempted</span>
+            <span class="list--mini">Religion: Buddhism</span>
+            <span class="list--mini">Driving license: Available</span>
+          </div>
+          <div class="contact-info" id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-info__container">
+              <div class="contact-info--tag">
+                <div class="cellphone"><b>Phone:</b> +6680-592-1717</div>
+                <div class="email">
+                  <p>
+                    <b>Email:</b>
+                    <a href="mailto:peeti.kk1@gmail.com">peeti.kk1@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+              <div class="online-site">
+                <a
+                  href="https://www.linkedin.com/in/peeti-kanchanakungwalkul-08a67417a"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <div class="linkedin-container">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                    LinkedIn
+                  </div>
+                </a>
+                <a
+                  href="https://www.github.com/peter9294"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <div class="github-container">
+                    <i class="fab fa-github fa-2x"></i>
+                    Github
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills__container">
+          <div class="language-skill">
+            <h3>Language proficiency</h3>
+            <div class="language-skill__container">
+              <div class="language-skill__item">
+                <div class="progress-bar--thai"></div>
+                <div class="language-skill__desc"><b>Thai</b>: Native</div>
+              </div>
+              <div class="language-skill__item">
+                <div class="progress-bar--english"></div>
+                <div><b>English</b>: <span id="advanceText">Proficient</span></div>
+              </div>
+              <div class="language-skill__item">
+                <div class="progress-bar--chinese"></div>
+                <div><b>Chinese</b>: Basic</div>
+              </div>
+            </div>
+          </div>
+          <div class="programming-skill">
+            <h3>Programming <i class="fas fa-keyboard icon--keyboard"></i></h3>
+            <ul>
+              <h4>Languages</h4>
+              <div>
+                <span class="list--mini"
+                  ><i class="fab fa-html5 icon--html"></i> HTML</span
+                >
+                <span class="list--mini"
+                  ><i class="fab fa-css3-alt icon--css"></i> CSS</span
+                >
+                <span class="list--mini"
+                  ><i class="fab fa-js icon--js"></i> Javascript ES6</span
+                >
+              </div>
+              <h4>Library</h4>
+              <div>
+                <span class="list--mini"
+                  ><i class="fab fa-react icon--react"></i> React.js</span
+                >
+                <span class="list--mini">Redux</span>
+                <span class="list--mini">jQuery</span>
+                <span class="list--mini"
+                  ><i class="fab fa-bootstrap icon--bootstrap"></i>
+                  Bootstrap</span
+                >
+                <span class="list--mini">EJS</span>
+              </div>
+              <h4>Framework</h4>
+              <div>
+                <span class="list--mini">Express.js</span>
+                <span class="list--mini">Next.js</span>
+              </div>
+              <h4>Database</h4>
+              <h5>NoSQL</h5>
+              <div>
+                <span class="list--mini">MongoDB</span>
+              </div>
+            </ul>
+          </div>
+          <div class="other-skill">
+            <h3>Others</h3>
+            <div class="other-skill__container">
+              <span class="list--mini">Microsoft Office</span>
+              <span class="list--mini">SketchUp</span>
+              <span class="list--mini">Adobe Photoshop</span>
+              <span class="list--mini">Adobe Illustrator</span>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <section id="timeline" class="timeline">
+        <h2>Timeline</h2>
+        <div class="timeline__body">
+          <div class="timeline--1">
+            <h3>2020-2021</h3>
+            <h4>Self-taught web developer</h4>
+            <p>With a particular interest in computer and technology, I decided to switch my career from being a Sales Engineer to a Web Developer. So far, my learnings have been mainly from 2 sources: FreeCodeCamp website and Udemy's courses. 
+            </p>
+            <div class="certificate">
+            <h4>Udemy</h4>
+            <div class="certificate__container">
+              <a
+                class="list--mini"
+                href="https://www.udemy.com/certificate/UC-6a6ef80b-cae6-47fc-9a42-cc749a07bdc8"
+                target="_blank"
+                rel="noreferrer noopener"
+                >Web Development Bootcamp</a
+              >
+            </div>
+            <h4>FreeCodeCamp</h4>
+            <div class="certificate__container">
+              <a
+                class="list--mini"
+                href="https://www.freecodecamp.org/certification/peter9294/responsive-web-design"
+                target="_blank"
+                rel="noreferrer noopener"
+                >Responsive Web Design</a
+              >
+              <a
+                class="list--mini"
+                href="https://www.freecodecamp.org/certification/peter9294/javascript-algorithms-and-data-structures"
+                target="_blank"
+                rel="noreferrer noopener"
+                >Javascript Algorithms and Data Structures</a
+              >
+              <a
+                class="list--mini"
+                href="https://www.freecodecamp.org/certification/peter9294/front-end-development-libraries"
+                target="_blank"
+                rel="noreferrer noopener"
+                >Front-End Development Libraries</a
+              >
+            </div>
+          </div>
+          </div>
+          <span class="timeline--img--right"></span>
+          <div class="timeline--2">
+            <h3>2019-2020</h3>
+            <h4>Sales Engineer</h4>
+            <h5>Astro Serve (Thailand) Co., Ltd.</h5>
+            <ul>
+              <li>
+                Design and install audio-visual systems for clients off and on
+                site.
+              </li>
+              <li>
+                Connect the business with clients and partners in Thailand and
+                overseas.
+              </li>
+              <li>
+                Responsible for creating various documents including quotations,
+                proposals, user manual, system diagram, graphical brochure, etc.
+              </li>
+              <li>In charge of reporting monthly sales to the main branch.</li>
+              <li>
+                Work with foreign supervisors/colleagues in Thailand, Japan and
+                Vietnam.
+              </li>
+            </ul>
+          </div>
+          <span class="timeline--img--left"></span>
+          <div class="timeline--3">
+            <h3>2014-2018</h3>
+            <h4>Bachelor Graduate, Organic Chemistry</h4>
+            <h5>Mahidol University</h5>
+            <p>
+              Despite the irrelevance of my current career path to my university's major, I still enjoy exploring science as a hobby.
+            </p>
+          </div>
+          <span class="timeline--img--right--2"></span>
+        </div>
+      </section>
+      
+    <section class="address">
+            <div class="address__container">
+              <img
+                src="./assets/picture/seal.webp"
+                alt="seal"
+                class="img--seal"
+              />
+              <img
+                src="./assets/picture/stamp.png"
+                alt="stamp"
+                class="img--stamp"
+              />
+              <h2>Address</h2>
+              <address>
+                761/74 Lumpini ville Sukhumvit 76, Sukhumvit Rd. Soi. Sukhumvit
+                76. Samrong Nuea. Mueang Samut Prakarn. Samut Prakarn 10270
+              </address>
+              <div>
+                <p>_________________________________________</p>
+                <p>_________________________________________</p>
+                <p>_________________________________________</p>
+                <p>_________________________________________</p>
+              </div>
+            </div>
+            <div id="map"></div>
+    </section>
+          <footer>
+      <p><b>© 2021 Peeti Kanchanakungwalkul</b></p>
+    </footer>
+  </body>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzz2K6D5QoB4j0ZwSx4OLP-5uX01-iJ_0&callback=initMap&libraries=&v=weekly"
+    async
+  ></script>
+  <script src="index.js"></script>
+</html>

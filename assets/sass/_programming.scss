@@ -1,0 +1,30 @@
+.icon {
+  &--keyboard {
+    color: black;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  &--html {
+    color: #dd4b25;
+  }
+  &--css {
+    color: #264de4;
+  }
+
+  &--js {
+    color: #f7df1e;
+  }
+
+  &--react {
+    color: #66dbfb;
+  }
+
+  &--bootstrap {
+    color: #6d11ee;
+  }
+}

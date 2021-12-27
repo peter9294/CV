@@ -1,0 +1,88 @@
+@use "./assets/sass/includes";
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgb(98, 98, 138);
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  background-color: aliceblue;
+  padding: 0 200px 0 200px;
+  border: 5px solid #4361a3;
+}
+
+.list--mini {
+  padding: 0.4rem 0.8rem 0.24vw 0.8rem;
+  height: 25px;
+  width: fit-content;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.603);
+  cursor: pointer;
+  transition: 0.1s ease-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-decoration: 4px underline #4361a3;
+  text-underline-offset: 5.5px;
+  display: inline-block;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    // background-color: #4361a3;
+    background-color: aliceblue;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+h4 {
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+section {
+  margin-top: 80px;
+}
+
+@media (max-width: 1400px) {
+  body {
+    padding: 0 50px 0 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 20px 0 20px;
+  }
+}
+
+@media (max-width: 500px){
+  body{
+    padding: 0 10px 0 10px;
+  }
+  .list--mini{
+    font-size: 0.65rem;
+  }
+}

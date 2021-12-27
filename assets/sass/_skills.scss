@@ -1,0 +1,64 @@
+.skills__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas:
+    "language-skill programming-skill"
+    "other-skill programming-skill";
+}
+
+@media (max-width: 650px) {
+  .skills__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas:
+      "language-skill"
+      "programming-skill"
+      "other-skill";
+  }
+}
+
+.language-skill {
+  grid-area: language-skill;
+  width: fit-content;
+}
+
+.programming-skill {
+  grid-area: programming-skill;
+  width: 70%;
+
+  ul {
+    padding-left: 10px;
+  }
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    row-gap: 10px;
+  }
+
+  h5 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.other-skill {
+  grid-area: other-skill;
+  width: 70%;
+
+  &__container {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    row-gap: 10px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .language-skill {
+    &__container {
+      font-size: 0.85rem;
+    }
+  }
+}

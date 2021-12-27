@@ -1,0 +1,235 @@
+.timeline {
+  &__body {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1.5fr 1fr;
+    align-items: center;
+    grid-template-areas:
+      "timeline--1 timeline--img--right"
+      "timeline--img--left timeline--2"
+      "timeline--3 timeline--img--right--2";
+    // center line
+    &::before {
+      content: "";
+      background: rgb(218, 218, 224);
+      width: 5px;
+      height: 95%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50px;
+    }
+
+    h3,
+    h4,
+    h5 {
+      margin: 0;
+      margin-bottom: 5px;
+      font-weight: bold;
+      width: fit-content;
+    }
+
+    h3 {
+      color: rgb(45, 115, 177);
+    }
+  }
+}
+
+@mixin timeline-box {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+  padding: 30px 20px;
+  position: relative;
+  width: 75%;
+}
+
+.timeline--1 {
+  grid-area: timeline--1;
+  justify-self: end;
+  margin: 0 40px 0 0;
+  @include timeline-box();
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("./assets/picture/udemyCer.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 295px;
+    top: 25%;
+    right: 0;
+    bottom: 0;
+    left: 130%;
+    transform: rotate(5deg);
+    border: 1px solid white;
+    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+  }
+}
+.timeline--2 {
+  grid-area: timeline--2;
+  justify-self: start;
+  margin: 0 0 0 40px;
+  @include timeline-box();
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("./assets/picture/astroserve.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+    top: 0;
+    right: 130%;
+    bottom: 0;
+    left: none;
+    transform: rotate(-5deg);
+    border: 10px solid white;
+    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+  }
+}
+.timeline--3 {
+  grid-area: timeline--3;
+  justify-self: end;
+  margin: 0 40px 0 0;
+  @include timeline-box();
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("./assets/picture/chemistry.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 130%;
+    transform: rotate(4deg);
+    border: 10px solid white;
+    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 1000px) {
+  .timeline {
+    &__body {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "timeline--1"
+        "timeline--2"
+        "timeline--3";
+    }
+  }
+  .timeline--1 {
+    grid-area: timeline--1;
+    justify-self: center;
+    margin: 0;
+    &::after {
+      content: none;
+    }
+  }
+  .timeline--2 {
+    grid-area: timeline--2;
+    justify-self: center;
+    margin: 0;
+    &::after {
+      content: none;
+    }
+  }
+  .timeline--3 {
+    grid-area: timeline--3;
+    justify-self: center;
+    margin: 0;
+    &::after {
+      content: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .timeline__body {
+    grid-template-columns: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .timeline--1,
+  .timeline--2,
+  .timeline--3 {
+    // justify-self: start;
+    width: 85%;
+  }
+}
+@mixin timeline-img--right() {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(106, 106, 241);
+  border-radius: 30px;
+  left: 0;
+  transform: translateX(-50%);
+  transition: 0.3s ease-in-out;
+}
+
+@mixin timeline-img--left() {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(106, 106, 241);
+  border-radius: 30px;
+  right: 0;
+  transform: translateX(50%);
+  transition: 0.3s ease-in-out;
+}
+
+.timeline--img--right {
+  grid-area: timeline--img--right;
+  @include timeline-img--right();
+}
+
+.timeline--img--left {
+  grid-area: timeline--img--left;
+  @include timeline-img--left();
+}
+
+.timeline--img--right--2 {
+  grid-area: timeline--img--right--2;
+  @include timeline-img--right();
+}
+
+@media (max-width: 1000px) {
+  .timeline--img--right {
+    display: none;
+    visibility: hidden;
+  }
+  .timeline--img--left {
+    display: none;
+    visibility: hidden;
+  }
+  .timeline--img--right--2 {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.certificate {
+  width: 70%;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.certificate__container {
+  display: grid;
+  padding: 20px 0;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: repeat(auto-fill, 1fr);
+  row-gap: 20px;
+}
